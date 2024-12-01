@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "IFWS9JqW3T1lZYFiCmoALlvuF8blgEU+sFZADxXhyvU=",
+  "Hash": "Uezxok1fEOE5WqRSmPApOadMtCmiJzDUNB4ITs1xyx8=",
   "Source": "StayNest-API",
   "BasePath": "_content/StayNest-API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

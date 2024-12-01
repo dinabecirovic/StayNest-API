@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Migrations\\20241201144815_Users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:StayNest-API\\Migrations\\20241201144815_Users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|c:\\users\\administrator\\desktop\\staynest-api\\staynest-api\\staynest-api\\data\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|solutionrelative:staynest-api\\data\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -37,24 +33,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 163,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20241201144815_Users.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Migrations\\20241201144815_Users.cs",
-              "RelativeDocumentMoniker": "StayNest-API\\Migrations\\20241201144815_Users.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Migrations\\20241201144815_Users.cs",
-              "RelativeToolTip": "StayNest-API\\Migrations\\20241201144815_Users.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T14:48:15.191Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "20241201142713_ic.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Migrations\\20241201142713_ic.cs",
               "RelativeDocumentMoniker": "StayNest-API\\Migrations\\20241201142713_ic.cs",
@@ -67,7 +50,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Users.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Data\\Models\\Users.cs",
               "RelativeDocumentMoniker": "StayNest-API\\Data\\Models\\Users.cs",
@@ -80,7 +63,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "DatabaseContext.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Data\\DatabaseContext.cs",
               "RelativeDocumentMoniker": "StayNest-API\\Data\\DatabaseContext.cs",
@@ -93,7 +76,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Program.cs",
               "RelativeDocumentMoniker": "StayNest-API\\Program.cs",
@@ -105,7 +88,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\appsettings.json",
               "RelativeDocumentMoniker": "StayNest-API\\appsettings.json",
@@ -118,7 +101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "20241103150623_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\Dina\\Desktop\\StayNest-API\\StayNest-API\\Migrations\\20241103150623_InitialCreate.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Dina\\Desktop\\StayNest-API\\StayNest-API\\Migrations\\20241103150623_InitialCreate.cs",
