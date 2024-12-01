@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StayNest-API", "StayNest-API\StayNest-API.csproj", "{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {26A0E723-D799-4FF7-8AC7-78437FC8D218}
+	EndGlobalSection
+EndGlobal

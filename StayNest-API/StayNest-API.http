@@ -1,0 +1,6 @@
+@StayNest_API_HostAddress = http://localhost:5226
+
+GET {{StayNest_API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
