@@ -148,9 +148,11 @@ C:\Users\Administrator\Desktop\StayNest-api\StayNest-API\StayNest-API\bin\Debug\
 C:\Users\Administrator\Desktop\StayNest-api\StayNest-API\StayNest-API\bin\Debug\net8.0\StayNest-API.runtimeconfig.json
 C:\Users\Administrator\Desktop\StayNest-api\StayNest-API\StayNest-API\bin\Debug\net8.0\StayNest-API.dll
 C:\Users\Administrator\Desktop\StayNest-api\StayNest-API\StayNest-API\bin\Debug\net8.0\StayNest-API.pdb
+C:\Users\Administrator\Desktop\StayNest-api\StayNest-API\StayNest-API\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\Administrator\Desktop\StayNest-api\StayNest-API\StayNest-API\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\Administrator\Desktop\StayNest-api\StayNest-API\StayNest-API\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\Administrator\Desktop\StayNest-api\StayNest-API\StayNest-API\bin\Debug\net8.0\Humanizer.dll
+C:\Users\Administrator\Desktop\StayNest-api\StayNest-API\StayNest-API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Administrator\Desktop\StayNest-api\StayNest-API\StayNest-API\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Administrator\Desktop\StayNest-api\StayNest-API\StayNest-API\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
 C:\Users\Administrator\Desktop\StayNest-api\StayNest-API\StayNest-API\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll

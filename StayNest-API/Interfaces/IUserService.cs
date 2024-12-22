@@ -2,8 +2,14 @@
 
 namespace StayNest_API.Interfaces
 {
-    public class IUserService
+    public interface IUserService
     {
-        Task<List<User>> GetAllUsersAsync();
+        Task<List<Users>> GetAllUserAsync();
+        string GenerateToken(Users user);
+        string HashPassword(string password);
+        Task AddUserToRole(Users user);
+        Task RegisterUser(Users user);
+        Task CreateRole(UserRole role);
+        Task<Users?> GetUserByUsername(string username);
     }
 }

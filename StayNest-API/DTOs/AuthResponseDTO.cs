@@ -1,0 +1,8 @@
+﻿namespace StayNest_API.DTOs
+{
+    public class AuthResponseDTO
+    {
+        public UserResponseDTO Users { get; set; }   
+        public string Token { get; set; }
+    }
+}

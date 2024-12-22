@@ -1,0 +1,258 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|c:\\users\\administrator\\desktop\\staynest-api\\staynest-api\\staynest-api\\services\\bungalowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|solutionrelative:staynest-api\\services\\bungalowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|c:\\users\\administrator\\desktop\\staynest-api\\staynest-api\\staynest-api\\data\\models\\advertisement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|solutionrelative:staynest-api\\data\\models\\advertisement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|c:\\users\\administrator\\desktop\\staynest-api\\staynest-api\\staynest-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|solutionrelative:staynest-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|c:\\users\\administrator\\desktop\\staynest-api\\staynest-api\\staynest-api\\interfaces\\ibungalowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|solutionrelative:staynest-api\\interfaces\\ibungalowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|c:\\users\\administrator\\desktop\\staynest-api\\staynest-api\\staynest-api\\controllers\\bungalowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|solutionrelative:staynest-api\\controllers\\bungalowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|c:\\users\\administrator\\desktop\\staynest-api\\staynest-api\\staynest-api\\dtos\\advertisementresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|solutionrelative:staynest-api\\dtos\\advertisementresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|c:\\users\\administrator\\desktop\\staynest-api\\staynest-api\\staynest-api\\dtos\\searchcriteriadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|solutionrelative:staynest-api\\dtos\\searchcriteriadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|c:\\users\\administrator\\desktop\\staynest-api\\staynest-api\\staynest-api\\dtos\\advertisementrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|solutionrelative:staynest-api\\dtos\\advertisementrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|c:\\users\\administrator\\desktop\\staynest-api\\staynest-api\\staynest-api\\data\\models\\administrator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|solutionrelative:staynest-api\\data\\models\\administrator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|c:\\users\\administrator\\desktop\\staynest-api\\staynest-api\\staynest-api\\profiles\\advertisementmappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|solutionrelative:staynest-api\\profiles\\advertisementmappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|c:\\users\\administrator\\desktop\\staynest-api\\staynest-api\\staynest-api\\profiles\\bungalowownermappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|solutionrelative:staynest-api\\profiles\\bungalowownermappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|c:\\users\\administrator\\desktop\\staynest-api\\staynest-api\\staynest-api\\profiles\\administratormappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|solutionrelative:staynest-api\\profiles\\administratormappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|c:\\users\\administrator\\desktop\\staynest-api\\staynest-api\\staynest-api\\dtos\\bungalowownerresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|solutionrelative:staynest-api\\dtos\\bungalowownerresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|c:\\users\\administrator\\desktop\\staynest-api\\staynest-api\\staynest-api\\dtos\\bungalowownerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|solutionrelative:staynest-api\\dtos\\bungalowownerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Advertisement.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Data\\Models\\Advertisement.cs",
+              "RelativeDocumentMoniker": "StayNest-API\\Data\\Models\\Advertisement.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Data\\Models\\Advertisement.cs",
+              "RelativeToolTip": "StayNest-API\\Data\\Models\\Advertisement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T15:30:40.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BungalowController.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Controllers\\BungalowController.cs",
+              "RelativeDocumentMoniker": "StayNest-API\\Controllers\\BungalowController.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Controllers\\BungalowController.cs",
+              "RelativeToolTip": "StayNest-API\\Controllers\\BungalowController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T14:01:39.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BungalowService.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Services\\BungalowService.cs",
+              "RelativeDocumentMoniker": "StayNest-API\\Services\\BungalowService.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Services\\BungalowService.cs",
+              "RelativeToolTip": "StayNest-API\\Services\\BungalowService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T13:19:26.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IBungalowService.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Interfaces\\IBungalowService.cs",
+              "RelativeDocumentMoniker": "StayNest-API\\Interfaces\\IBungalowService.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Interfaces\\IBungalowService.cs",
+              "RelativeToolTip": "StayNest-API\\Interfaces\\IBungalowService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T13:12:00.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SearchCriteriaDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\DTOs\\SearchCriteriaDTO.cs",
+              "RelativeDocumentMoniker": "StayNest-API\\DTOs\\SearchCriteriaDTO.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\DTOs\\SearchCriteriaDTO.cs",
+              "RelativeToolTip": "StayNest-API\\DTOs\\SearchCriteriaDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T13:00:06.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AdvertisementResponseDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\DTOs\\AdvertisementResponseDTO.cs",
+              "RelativeDocumentMoniker": "StayNest-API\\DTOs\\AdvertisementResponseDTO.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\DTOs\\AdvertisementResponseDTO.cs",
+              "RelativeToolTip": "StayNest-API\\DTOs\\AdvertisementResponseDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T12:14:31.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Program.cs",
+              "RelativeDocumentMoniker": "StayNest-API\\Program.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Program.cs",
+              "RelativeToolTip": "StayNest-API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T11:24:17.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AdvertisementRequestDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\DTOs\\AdvertisementRequestDTO.cs",
+              "RelativeDocumentMoniker": "StayNest-API\\DTOs\\AdvertisementRequestDTO.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\DTOs\\AdvertisementRequestDTO.cs",
+              "RelativeToolTip": "StayNest-API\\DTOs\\AdvertisementRequestDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T12:54:54.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AdvertisementMappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Profiles\\AdvertisementMappingProfile.cs",
+              "RelativeDocumentMoniker": "StayNest-API\\Profiles\\AdvertisementMappingProfile.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Profiles\\AdvertisementMappingProfile.cs",
+              "RelativeToolTip": "StayNest-API\\Profiles\\AdvertisementMappingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T12:11:39.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AdministratorMappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Profiles\\AdministratorMappingProfile.cs",
+              "RelativeDocumentMoniker": "StayNest-API\\Profiles\\AdministratorMappingProfile.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Profiles\\AdministratorMappingProfile.cs",
+              "RelativeToolTip": "StayNest-API\\Profiles\\AdministratorMappingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T11:30:13.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "BungalowOwnerMappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Profiles\\BungalowOwnerMappingProfile.cs",
+              "RelativeDocumentMoniker": "StayNest-API\\Profiles\\BungalowOwnerMappingProfile.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Profiles\\BungalowOwnerMappingProfile.cs",
+              "RelativeToolTip": "StayNest-API\\Profiles\\BungalowOwnerMappingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T11:43:52.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Administrator.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Data\\Models\\Administrator.cs",
+              "RelativeDocumentMoniker": "StayNest-API\\Data\\Models\\Administrator.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\Data\\Models\\Administrator.cs",
+              "RelativeToolTip": "StayNest-API\\Data\\Models\\Administrator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T11:21:07.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "BungalowOwnerResponseDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\DTOs\\BungalowOwnerResponseDTO.cs",
+              "RelativeDocumentMoniker": "StayNest-API\\DTOs\\BungalowOwnerResponseDTO.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\DTOs\\BungalowOwnerResponseDTO.cs",
+              "RelativeToolTip": "StayNest-API\\DTOs\\BungalowOwnerResponseDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T11:45:55.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BungalowOwnerRequestDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\DTOs\\BungalowOwnerRequestDTO.cs",
+              "RelativeDocumentMoniker": "StayNest-API\\DTOs\\BungalowOwnerRequestDTO.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\StayNest-api\\StayNest-API\\StayNest-API\\DTOs\\BungalowOwnerRequestDTO.cs",
+              "RelativeToolTip": "StayNest-API\\DTOs\\BungalowOwnerRequestDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T11:48:20.086Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
