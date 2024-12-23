@@ -7,8 +7,10 @@ namespace StayNest_API.Interfaces
     {
         Task<List<Advertisement>> SearchAdvertisements(SearchCriteriaDTO criteria);
 
-        Task ReserveBungalov(Reservation reservation);
-        
+        Task ReserveBungalow(Reservation reservation);
+
+        Task AddRating(Rating rating);
+
     }
 }
 

@@ -65,5 +65,12 @@ namespace StayNest_API.Services
             await _databaseContext.Reservations.AddAsync(reservation);
             await _databaseContext.SaveChangesAsync();
         }
+
+        public async Task AddRating(Rating rating)
+        {
+            await _databaseContext.Ratings.AddAsync(rating);
+            await _databaseContext.SaveChangesAsync();
+        }
+
     }
 }
