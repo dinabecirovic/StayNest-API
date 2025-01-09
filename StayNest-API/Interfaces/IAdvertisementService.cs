@@ -10,6 +10,6 @@ namespace StayNest_API.Interfaces
         Task UpdateAdvertisementPrice(int advertisementId, int newPrice);
         Task<List<Reservation>> GetReservationsForOwner(int BungalowOwnerId);
         Task DeleteAdvertisement(int advertisementId, int BungalowOwnerId);
-
+        Task DeleteAdvertisementByAdmin(int advertisementId);
     }
 }

@@ -4,6 +4,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using StayNest_API.DTOs;
 using StayNest_API.Data.Models;
+using Microsoft.AspNetCore.Authorization.Infrastructure;
 
 namespace StayNest_API.Controllers
 { 
@@ -21,9 +22,17 @@ namespace StayNest_API.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> GetAllUser() =>
             Ok(_mapper.Map<List<UserResponseDTO>>(await _userService.GetAllUserAsync()));
+
+        [HttpGet("valid-roles")]
+        public IActionResult GetValidRoles()
+        {
+            var validRoles = new List<string> { "User", "BungalowOwner", "Administrator"};
+            return Ok(validRoles);
+        }
+
 
         [HttpPost("register")]
         public async Task<IActionResult> RegisterUser([FromBody] RegisterUserRequestDTO request)
@@ -43,9 +52,17 @@ namespace StayNest_API.Controllers
 
             await _userService.RegisterUser(user);
 
+            var validRoles = new List<string> { "User", "BungalowOwner", "Administrator"};
+            if (!validRoles.Contains(request.UserRole)) { 
+                return BadRequest (new ErrorResponseDTO 
+                { 
+                    Message = "Nepoznata uloga."
+                });
+            }
+
             await _userService.CreateRole(new UserRole
             {
-                Name = "User",
+                Name = request.UserRole,
                 UserId = user.Id
             });
 
@@ -54,7 +71,7 @@ namespace StayNest_API.Controllers
             return Ok(new AuthResponseDTO
             {
                 Token = token,
-                Users = _mapper.Map<UserResponseDTO>(user)
+                Users = _mapper.Map<UserResponseDTO>(user),
             });
         }
 
@@ -62,6 +79,7 @@ namespace StayNest_API.Controllers
         public async Task<IActionResult> LoginUser([FromBody] LoginUserRequestDTO request)
         {
             var userExist = await _userService.GetUserByUsername(request.Username);
+
 
             if (userExist is null)
             {
@@ -81,10 +99,14 @@ namespace StayNest_API.Controllers
 
             var token = _userService.GenerateToken(userExist);
 
+            var userRole = await _userService.GetUserRole(userExist.Id);
+
             return Ok(new AuthResponseDTO
             {
                 Token = token,
-                Users = _mapper.Map<UserResponseDTO>(userExist)
+                Users = _mapper.Map<UserResponseDTO>(userExist),
+                Role = userRole,
+                
             });
         }
     }

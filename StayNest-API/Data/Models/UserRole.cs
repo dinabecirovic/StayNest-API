@@ -6,6 +6,9 @@ namespace StayNest_API.Data.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int UserId { get; set; }
+
+        public int? UserId { get; set; }
+        public int? BungalowOwnerId { get; set; }
+        public int? AdministratorId { get; set; }
     }
 }

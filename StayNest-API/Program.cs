@@ -17,10 +17,36 @@ var configuration = builder.Configuration;
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = Microsoft.OpenApi.Models.SecuritySchemeType.Http,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+        Description = "Enter 'Bearer' [space] and then your valid token in the text input below."
+    });
+    options.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
+    {
+        {
+            new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+            {
+                Reference = new Microsoft.OpenApi.Models.OpenApiReference
+                {
+                    Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] {}
+        }
+    });
+});
 builder.Services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IBungalowService, BungalowService>();
+builder.Services.AddScoped<IAdvertisementService, AdvertisementService>();
 builder.Services.AddAutoMapper(typeof(Program));
 
 
@@ -46,18 +72,22 @@ builder.Services.AddAuthentication(options =>
         options.RequireHttpsMetadata = false;
     });
 
-builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder => {
-        builder.AllowAnyOrigin()
-        .AllowAnyMethod()
-        .AllowAnyHeader();
-    }));
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp", builder =>
+    {
+        builder.WithOrigins("http://localhost:3000")
+               .AllowAnyHeader()
+               .AllowAnyMethod();
+    });
+});
 
 var mapperConfig = new MapperConfiguration(cfg =>
 {
     // Mapiranje za registraciju korisnika
     cfg.CreateMap<RegisterUserRequestDTO, Users>()
-        .ForMember(dest => dest.Id, opt => opt.Ignore()) // Ignorišite polje koje se ne mapira
-        .ForMember(dest => dest.Password, opt => opt.Ignore()); // Ignorišite jer se ru?no dodaje hash
+        .ForMember(dest => dest.Id, opt => opt.Ignore()) 
+        .ForMember(dest => dest.Password, opt => opt.Ignore()); 
 
     // Mapiranje za odgovor korisnika
     cfg.CreateMap<Users, UserResponseDTO>();
@@ -66,6 +96,8 @@ var mapperConfig = new MapperConfiguration(cfg =>
 IMapper mapper = mapperConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);
 var app = builder.Build();
+
+app.UseCors("AllowReactApp");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -76,9 +108,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors("MyPolicy");
+
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-app.UseCors("MyPolicy");
 
 app.Run();

@@ -100,5 +100,17 @@ namespace StayNest_API.Services
                 .Where(r => r.Advertisement.BungalowOwnerId == BungalowOwnerId)
                 .ToListAsync();
         }
+
+        public async Task DeleteAdvertisementByAdmin(int advertisementId)
+        {
+            var advertisement = await _databaseContext.Advertisements.FindAsync(advertisementId);
+
+            if (advertisement == null)
+                throw new KeyNotFoundException("Oglas nije pronađen.");
+
+            _databaseContext.Advertisements.Remove(advertisement);
+            await _databaseContext.SaveChangesAsync();
+        }
+
     }
 }

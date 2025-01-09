@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StayNest-API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4287e37a12c11b549d7ec2ecc49676250afc9ad")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c189c62243565b6b59a3b1324bf2cf1af7a5b2fe")]
 [assembly: System.Reflection.AssemblyProductAttribute("StayNest-API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StayNest-API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -85,5 +85,33 @@ namespace StayNest_API.Services
 
         public async Task<Users?> GetUserByUsername(string username) =>
             await _databaseContext.Users.FirstOrDefaultAsync(x => x.Username == username);
+
+        public async Task DeleteUser(int userId)
+        {
+            var user = await _databaseContext.Users.FindAsync(userId);
+
+            if (user == null)
+                throw new KeyNotFoundException("Kotisnik nije pronađen.");
+
+            _databaseContext.Users.Remove(user);
+            await _databaseContext.SaveChangesAsync();
+        }
+
+        public async Task<string> GetUserRole(int userId)
+        {
+            var userRole = await _databaseContext.UserRole
+                .Where(ur => ur.UserId == userId)
+                .Select(ur => ur.Name) 
+                .FirstOrDefaultAsync();
+
+            if (string.IsNullOrEmpty(userRole))
+            {
+                throw new Exception("Korisnik nema dodeljenu ulogu.");
+            }
+
+            return userRole;
+        }
+
+
     }
 } 

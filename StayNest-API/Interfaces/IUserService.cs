@@ -11,5 +11,7 @@ namespace StayNest_API.Interfaces
         Task RegisterUser(Users user);
         Task CreateRole(UserRole role);
         Task<Users?> GetUserByUsername(string username);
+        Task DeleteUser(int userId);
+        Task<string> GetUserRole(int userId);
     }
 }
