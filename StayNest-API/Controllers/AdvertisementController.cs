@@ -17,7 +17,7 @@ namespace StayNest_API.Controllers
         }
 
         [HttpPost("create")]
-        [Authorize]
+        [Authorize(Roles = "BungalowOwner")]
         public async Task<IActionResult> CreateAdvertisement([FromBody] AdvertisementRequestDTO request)
         {
             var advertisement = await _advertisementService.CreateAdvertisement(request);

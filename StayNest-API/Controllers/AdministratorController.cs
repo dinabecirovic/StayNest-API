@@ -4,7 +4,6 @@ using StayNest_API.Interfaces;
 
 [ApiController]
 [Route("api/[controller]")]
-[Authorize(Roles = "Administrator")]
 public class AdministratorController : ControllerBase
 {
     private readonly IUserService _userService;
@@ -16,7 +15,25 @@ public class AdministratorController : ControllerBase
         _advertisementService = advertisementService;
     }
 
+    [HttpGet("debug-claims")]
+    [Authorize]
+    public IActionResult DebugClaims()
+    {
+        var claims = User.Claims.Select(c => new { c.Type, c.Value }).ToList();
+        return Ok(claims);
+    }
+
+
+    [HttpGet("users")]
+    [Authorize(Roles = "Administrator")]
+    public async Task<IActionResult> GetAllUser()
+    { 
+        var users = await _userService.GetAllUserAsync();
+        return Ok(users);
+    }
+
     [HttpDelete("users/{userId}")]
+    [Authorize(Roles = "Administrator")]
     public async Task<IActionResult> DeleteUser(int userId)
     {
         try
@@ -31,6 +48,7 @@ public class AdministratorController : ControllerBase
     }
 
     [HttpDelete("advertisements/{advertisementId}")]
+    [Authorize(Roles = "Administrator")]
     public async Task<IActionResult> DeleteAdvertisement(int advertisementId)
     {
         try

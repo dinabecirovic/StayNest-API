@@ -28,23 +28,38 @@ namespace StayNest_API.Services
 
         public string GenerateToken(Users users)
         {
+            if (users == null)
+                throw new ArgumentNullException(nameof(users), "User cannot be null");
+
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_configuration["Auth:Secret"]);
 
+            //var roles = users.Roles?.Select(r => r.Name) ?? new List<string> { "Prijavljeni korisnik" };
+
+            var claims = new List<Claim>
+            {
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim("id", users.Id.ToString()),
+                new Claim("role", users.Roles)
+
+
+            };
+
+            //claims.AddRange(roles.Select(role => new Claim("role", role)));
+
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new System.Security.Claims.ClaimsIdentity(new[] {
-                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    new Claim("id", users.Id.ToString()),
-                    new Claim("Role", "Administrator"),
-                }),
+                Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.UtcNow.AddHours(2),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256)
+
             };
+
             var securityToken = tokenHandler.CreateToken(tokenDescriptor);
 
             return tokenHandler.WriteToken(securityToken);
         }
+
 
         public string HashPassword(string password)
         {

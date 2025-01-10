@@ -61,6 +61,7 @@ builder.Services.AddAuthentication(options =>
         options.SaveToken = true;
         options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
         {
+            RoleClaimType = "http://schemas.microsoft.com/ws/2008/06/identity/claims/role",
             ValidateIssuer = false,
             ValidateAudience = false,
             IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Auth:Secret"])),
@@ -93,6 +94,8 @@ var mapperConfig = new MapperConfiguration(cfg =>
     cfg.CreateMap<Users, UserResponseDTO>();
 });
 
+
+
 IMapper mapper = mapperConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);
 var app = builder.Build();
@@ -108,10 +111,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseCors("MyPolicy");
+app.UseCors("AllowReactApp");
 
 app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllers();
 

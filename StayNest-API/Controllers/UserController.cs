@@ -21,10 +21,10 @@ namespace StayNest_API.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet]
+        /*[HttpGet]
         [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> GetAllUser() =>
-            Ok(_mapper.Map<List<UserResponseDTO>>(await _userService.GetAllUserAsync()));
+            Ok(_mapper.Map<List<UserResponseDTO>>(await _userService.GetAllUserAsync()));*/
 
         [HttpGet("valid-roles")]
         public IActionResult GetValidRoles()
@@ -53,18 +53,18 @@ namespace StayNest_API.Controllers
             await _userService.RegisterUser(user);
 
             var validRoles = new List<string> { "User", "BungalowOwner", "Administrator"};
-            if (!validRoles.Contains(request.UserRole)) { 
+            if (!validRoles.Contains(request.Roles)) { 
                 return BadRequest (new ErrorResponseDTO 
                 { 
                     Message = "Nepoznata uloga."
                 });
             }
 
-            await _userService.CreateRole(new UserRole
+           /* await _userService.CreateRole(new UserRole
             {
                 Name = request.UserRole,
                 UserId = user.Id
-            });
+            });*/
 
             var token = _userService.GenerateToken(user);
 
@@ -72,6 +72,8 @@ namespace StayNest_API.Controllers
             {
                 Token = token,
                 Users = _mapper.Map<UserResponseDTO>(user),
+                Role = user.Roles,
+
             });
         }
 
@@ -105,7 +107,7 @@ namespace StayNest_API.Controllers
             {
                 Token = token,
                 Users = _mapper.Map<UserResponseDTO>(userExist),
-                Role = userRole,
+                Role = userExist.Roles,
                 
             });
         }
