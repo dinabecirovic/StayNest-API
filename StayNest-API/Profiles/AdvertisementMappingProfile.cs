@@ -10,6 +10,8 @@ namespace StayNest_API.Profiles
         {
             CreateMap<Advertisement, AdvertisementResponseDTO>();
             CreateMap<AdvertisementResponseDTO, Advertisement>();
+
         }
     }
 }
+

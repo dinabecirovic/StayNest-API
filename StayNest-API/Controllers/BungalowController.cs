@@ -25,7 +25,7 @@ namespace StayNest_API.Controllers
         }
 
         [HttpPost("reserve")]
-        [Authorize]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> ReserveBungalow([FromBody] ReservationRequestDTO request) 
         {
             try
@@ -48,7 +48,7 @@ namespace StayNest_API.Controllers
         }
 
         [HttpPost("rate")]
-        [Authorize]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> RateBungalow([FromBody] RatingRequestDTO request)
         {
             var rating = new Rating

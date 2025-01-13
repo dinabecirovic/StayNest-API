@@ -52,7 +52,7 @@ namespace StayNest_API.Controllers
 
             await _userService.RegisterUser(user);
 
-            var validRoles = new List<string> { "User", "BungalowOwner", "Administrator"};
+            var validRoles = new List<string> { "User", "BungalowOwner"};
             if (!validRoles.Contains(request.Roles)) { 
                 return BadRequest (new ErrorResponseDTO 
                 { 
@@ -60,7 +60,7 @@ namespace StayNest_API.Controllers
                 });
             }
 
-           /* await _userService.CreateRole(new UserRole
+            /*await _userService.CreateRole(new UserRole
             {
                 Name = request.UserRole,
                 UserId = user.Id
@@ -101,7 +101,7 @@ namespace StayNest_API.Controllers
 
             var token = _userService.GenerateToken(userExist);
 
-            var userRole = await _userService.GetUserRole(userExist.Id);
+           // var userRole = await _userService.GetUserRole(userExist.Id);
 
             return Ok(new AuthResponseDTO
             {

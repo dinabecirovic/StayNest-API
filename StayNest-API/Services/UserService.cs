@@ -106,7 +106,7 @@ namespace StayNest_API.Services
             var user = await _databaseContext.Users.FindAsync(userId);
 
             if (user == null)
-                throw new KeyNotFoundException("Kotisnik nije pronađen.");
+                throw new KeyNotFoundException("Korisnik nije pronađen.");
 
             _databaseContext.Users.Remove(user);
             await _databaseContext.SaveChangesAsync();

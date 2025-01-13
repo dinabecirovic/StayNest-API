@@ -18,6 +18,26 @@ namespace StayNest_API.Services
             _databaseContext = databaseContext;
         }
 
+        public async Task<List<AdvertisementResponseDTO>> GetAllAdvertisements()
+        {
+            var advertisements = await _databaseContext.Advertisements
+                .Select(a => new AdvertisementResponseDTO
+                {
+                    Id = a.Id,
+                    UrlPhoto = a.UrlPhoto,
+                    NumbersOfRooms = a.NumbersOfRooms,
+                    BuildingArea = a.BuildingArea,
+                    Location = a.Location,
+                    Price = a.Price,
+                    Description = a.Description,
+                    BungalowOwnerId = a.BungalowOwnerId,
+                    IsAvailable = a.IsAvailable
+                })
+                .ToListAsync();
+
+            return advertisements;
+        }
+
         public async Task<AdvertisementResponseDTO> CreateAdvertisement(AdvertisementRequestDTO request)
         {
             var advertisement = new Advertisement
@@ -81,10 +101,10 @@ namespace StayNest_API.Services
             await _databaseContext.SaveChangesAsync();
         }
 
-        public async Task DeleteAdvertisement(int advertisementId, int bungalowOwnerId)
+        public async Task DeleteAdvertisement(int advertisementId)
         {
             var advertisement = await _databaseContext.Advertisements
-                .FirstOrDefaultAsync(a => a.Id == advertisementId && a.BungalowOwnerId == bungalowOwnerId);
+                .FirstOrDefaultAsync(a => a.Id == advertisementId);
 
             if (advertisement == null)
                 throw new KeyNotFoundException("Oglas nije pronađen.");

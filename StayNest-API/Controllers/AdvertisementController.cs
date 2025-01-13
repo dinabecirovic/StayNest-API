@@ -16,6 +16,13 @@ namespace StayNest_API.Controllers
             _advertisementService = advertisementService;
         }
 
+        [HttpGet("advertisements")]
+        public async Task<IActionResult> GetAllAdvertisements()
+        {
+            var advertisements = await _advertisementService.GetAllAdvertisements();
+            return Ok(advertisements);
+        }
+
         [HttpPost("create")]
         [Authorize(Roles = "BungalowOwner")]
         public async Task<IActionResult> CreateAdvertisement([FromBody] AdvertisementRequestDTO request)
@@ -25,7 +32,7 @@ namespace StayNest_API.Controllers
         }
 
         [HttpGet("owner/{BungalowOwnerId}")]
-        [Authorize]
+        [Authorize(Roles = "BungalowOwner")]
         public async Task<IActionResult> GetOwnerAdvertisements(int ownerId)
         {
             var advertisements = await _advertisementService.GetOwnerAdvertisements(ownerId);
@@ -33,7 +40,7 @@ namespace StayNest_API.Controllers
         }
 
         [HttpPut("update-price/{advertisementId}")]
-        [Authorize]
+        [Authorize(Roles = "BungalowOwner")]
         public async Task<IActionResult> UpdateAdvertisementPrice(int advertisementId, [FromBody] int newPrice)
         {
             try
@@ -48,14 +55,12 @@ namespace StayNest_API.Controllers
         }
 
         [HttpDelete("{advertisementId}")]
-        [Authorize]
+        [Authorize(Roles = "BungalowOwner")]
         public async Task<IActionResult> DeleteAdvertisement(int advertisementId)
         {
             try
             {
-                var bungalowOwnerId = int.Parse(User.FindFirst("id")?.Value ?? "0");
-
-                await _advertisementService.DeleteAdvertisement(advertisementId, bungalowOwnerId);
+                await _advertisementService.DeleteAdvertisement(advertisementId);
                 return Ok(new { Message = "Oglas je uspešno izbrisan." });
             }
             catch (KeyNotFoundException ex)
