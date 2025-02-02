@@ -80,6 +80,8 @@ namespace StayNest_API.Services
                 return hash;
             }
         }
+
+
         public async Task AddUserToRole(Users users)
         {
             await _databaseContext.Users.AddAsync(users);
@@ -93,13 +95,16 @@ namespace StayNest_API.Services
         }
 
         public async Task CreateRole(UserRole role)
-        { 
+        {
             await _databaseContext.UserRole.AddAsync(role);
             await _databaseContext.SaveChangesAsync();
         }
 
         public async Task<Users?> GetUserByUsername(string username) =>
             await _databaseContext.Users.FirstOrDefaultAsync(x => x.Username == username);
+
+        public async Task<Users?> GetUserByEmail(string email) =>
+            await _databaseContext.Users.FirstOrDefaultAsync(u => u.Email == email);
 
         public async Task DeleteUser(int userId)
         {
@@ -116,7 +121,7 @@ namespace StayNest_API.Services
         {
             var userRole = await _databaseContext.UserRole
                 .Where(ur => ur.UserId == userId)
-                .Select(ur => ur.Name) 
+                .Select(ur => ur.Name)
                 .FirstOrDefaultAsync();
 
             if (string.IsNullOrEmpty(userRole))
@@ -129,4 +134,4 @@ namespace StayNest_API.Services
 
 
     }
-} 
+}

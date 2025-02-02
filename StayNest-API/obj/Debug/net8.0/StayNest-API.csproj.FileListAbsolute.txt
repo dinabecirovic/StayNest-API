@@ -292,3 +292,5 @@ C:\Users\Administrator\Desktop\StayNest-api\StayNest-API\StayNest-API\obj\Debug\
 C:\Users\Dina\Desktop\StayNest-API\StayNest-API\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\Dina\Desktop\StayNest-API\StayNest-API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Dina\Desktop\StayNest-API\StayNest-API\obj\Debug\net8.0\StayNest-API.sourcelink.json
+C:\Users\Dina\Desktop\StayNest-API\StayNest-API\bin\Debug\net8.0\CloudinaryDotNet.dll
+C:\Users\Dina\Desktop\StayNest-API\StayNest-API\bin\Debug\net8.0\Newtonsoft.Json.dll

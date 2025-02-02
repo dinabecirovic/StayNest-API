@@ -6,7 +6,7 @@ namespace StayNest_API.DTOs
 {
     public class AdvertisementRequestDTO
     {
-        public string UrlPhoto { get; set; }
+        public List<IFormFile> Photos { get; set; }
         public int NumbersOfRooms { get; set; }
         public int BuildingArea { get; set; }
         public string Location { get; set; }

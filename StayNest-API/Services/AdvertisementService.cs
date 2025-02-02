@@ -3,19 +3,21 @@ using StayNest_API.Data.Models;
 using StayNest_API.DTOs;
 using StayNest_API.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using Azure.Core;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
+using System.Security.Claims;
 
 namespace StayNest_API.Services
 {
     public class AdvertisementService : IAdvertisementService
     {
         private readonly DatabaseContext _databaseContext;
+        private readonly Cloudinary _cloudinary;
 
-        public AdvertisementService(DatabaseContext databaseContext)
+        public AdvertisementService(DatabaseContext databaseContext, Cloudinary cloudinary)
         {
             _databaseContext = databaseContext;
+            _cloudinary = cloudinary;
         }
 
         public async Task<List<AdvertisementResponseDTO>> GetAllAdvertisements()
@@ -24,7 +26,7 @@ namespace StayNest_API.Services
                 .Select(a => new AdvertisementResponseDTO
                 {
                     Id = a.Id,
-                    UrlPhoto = a.UrlPhoto,
+                    UrlPhotos = a.UrlPhotos,
                     NumbersOfRooms = a.NumbersOfRooms,
                     BuildingArea = a.BuildingArea,
                     Location = a.Location,
@@ -38,17 +40,50 @@ namespace StayNest_API.Services
             return advertisements;
         }
 
-        public async Task<AdvertisementResponseDTO> CreateAdvertisement(AdvertisementRequestDTO request)
+        private async Task<string> UploadImageToCloudinary(IFormFile file)
         {
+            var uploadParams = new ImageUploadParams()
+            {
+                File = new FileDescription(file.FileName, file.OpenReadStream()),
+                UploadPreset = "ml_default" // Koristi svoj preset ovde
+            };
+
+            var uploadResult = await _cloudinary.UploadAsync(uploadParams);
+            if (uploadResult?.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                return uploadResult.SecureUrl.AbsoluteUri; // Vraćamo sigurni URL slike
+            }
+
+            return null;
+        }
+
+        public async Task<AdvertisementResponseDTO> CreateAdvertisement(AdvertisementRequestDTO request, ClaimsPrincipal user)
+        {
+            var uploadedUrls = new List<string>();
+
+            // Obradjujemo svaku sliku i uploadujemo je na Cloudinary
+            foreach (var file in request.Photos)
+            {
+                var uploadResult = await UploadImageToCloudinary(file);
+                if (uploadResult != null)
+                {
+                    uploadedUrls.Add(uploadResult);
+                }
+            }
+
+            var bungalowOwnerId = int.Parse(user.FindFirst("id")?.Value ?? "0");
+            Console.WriteLine($"SalonOwnerId iz tokena: {bungalowOwnerId}");
+
+            // Kreiramo oglas
             var advertisement = new Advertisement
             {
-                UrlPhoto = request.UrlPhoto,
+                UrlPhotos = uploadedUrls,  // Čuvamo listu URL-ova
                 NumbersOfRooms = request.NumbersOfRooms,
                 BuildingArea = request.BuildingArea,
                 Location = request.Location,
                 Price = request.Price,
                 Description = request.Description,
-                BungalowOwnerId = request.BungalowOwnerId,
+                BungalowOwnerId = bungalowOwnerId,
                 IsAvailable = true
             };
 
@@ -58,37 +93,37 @@ namespace StayNest_API.Services
             return new AdvertisementResponseDTO
             {
                 Id = advertisement.Id,
-                UrlPhoto = request.UrlPhoto,
+                UrlPhotos = uploadedUrls,  // Vraćamo listu URL-ova
                 NumbersOfRooms = request.NumbersOfRooms,
                 BuildingArea = request.BuildingArea,
                 Location = request.Location,
                 Price = request.Price,
                 Description = request.Description,
-                BungalowOwnerId = request.BungalowOwnerId,
+                BungalowOwnerId = bungalowOwnerId,
                 IsAvailable = true
             };
         }
-
-        public async Task<List<AdvertisementResponseDTO>> GetOwnerAdvertisements(int BungalowOwnerId)
+        public async Task<List<AdvertisementResponseDTO>> GetOwnerAdvertisements(int bungalowOwnerId)
         {
             var advertisements = await _databaseContext.Advertisements
-                .Where(a => a.BungalowOwnerId == BungalowOwnerId)
+                .Where(a => a.BungalowOwnerId == bungalowOwnerId)
                 .Select(a => new AdvertisementResponseDTO
                 {
                     Id = a.Id,
-                    UrlPhoto = a.UrlPhoto,
+                    UrlPhotos = a.UrlPhotos,  
                     NumbersOfRooms = a.NumbersOfRooms,
                     BuildingArea = a.BuildingArea,
                     Location = a.Location,
                     Price = a.Price,
                     Description = a.Description,
                     BungalowOwnerId = a.BungalowOwnerId,
-                    IsAvailable = true
+                    IsAvailable = a.IsAvailable
                 })
                 .ToListAsync();
 
             return advertisements;
         }
+
 
         public async Task UpdateAdvertisementPrice(int advertisementId, int newPrice)
         {
@@ -131,6 +166,5 @@ namespace StayNest_API.Services
             _databaseContext.Advertisements.Remove(advertisement);
             await _databaseContext.SaveChangesAsync();
         }
-
     }
 }

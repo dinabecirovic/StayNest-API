@@ -10,10 +10,21 @@ using StayNest_API.Services;
 using AutoMapper;
 using StayNest_API.Data.Models;
 using StayNest_API.DTOs;
+using CloudinaryDotNet;
 
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
+
+
+// Cloudinary konfiguracija
+var cloudinaryAccount = new Account(
+    "dmprka9ht",   // Zameni sa tvojim Cloud Name
+    "259731416673625",      // Zameni sa tvojim API Key
+    "cH6ze8oILeUtuMDfnMLbjGlhiYY"    // Zameni sa tvojim API Secret
+);
+var cloudinary = new Cloudinary(cloudinaryAccount);
+builder.Services.AddSingleton(cloudinary);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -93,8 +104,6 @@ var mapperConfig = new MapperConfiguration(cfg =>
     // Mapiranje za odgovor korisnika
     cfg.CreateMap<Users, UserResponseDTO>();
 });
-
-
 
 IMapper mapper = mapperConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);

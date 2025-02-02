@@ -25,16 +25,23 @@ namespace StayNest_API.Controllers
 
         [HttpPost("create")]
         [Authorize(Roles = "BungalowOwner")]
-        public async Task<IActionResult> CreateAdvertisement([FromBody] AdvertisementRequestDTO request)
+        public async Task<IActionResult> CreateAdvertisement([FromForm] AdvertisementRequestDTO request)
         {
-            var advertisement = await _advertisementService.CreateAdvertisement(request);
+            var advertisement = await _advertisementService.CreateAdvertisement(request, User);
             return Ok(advertisement);
         }
 
         [HttpGet("owner/{BungalowOwnerId}")]
         [Authorize(Roles = "BungalowOwner")]
-        public async Task<IActionResult> GetOwnerAdvertisements(int ownerId)
+        public async Task<IActionResult> GetOwnerAdvertisements()
         {
+            var ownerId = int.Parse(User.FindFirst("id")?.Value ?? "0");
+
+            if (ownerId == 0)
+            {
+                return Unauthorized("Invalid token.");
+            } 
+
             var advertisements = await _advertisementService.GetOwnerAdvertisements(ownerId);
             return Ok(advertisements);
         }
