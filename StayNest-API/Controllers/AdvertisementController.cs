@@ -80,13 +80,19 @@ namespace StayNest_API.Controllers
             }
         }
 
-        [HttpGet("reservations/{BungalowOwnerId}")]
-        [Authorize]
-        public async Task<IActionResult> GetReservationsForOwner(int BungalowOwnerId)
+        [HttpGet("reservations/{advertisementId}")]
+        [Authorize(Roles = "BungalowOwner")]
+        public async Task<IActionResult> GetReservationsForAdvertisement(int advertisementId)
         {
-            var reservations = await _advertisementService.GetReservationsForOwner(BungalowOwnerId);
+            var reservations = await _advertisementService.GetReservationsForAdvertisement(advertisementId);
+
+            if (!reservations.Any())
+            {
+                return NotFound("Nema rezervacija za ovaj oglas.");
+            }
 
             return Ok(reservations);
         }
+
     }
 }

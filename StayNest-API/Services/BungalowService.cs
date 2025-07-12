@@ -72,5 +72,14 @@ namespace StayNest_API.Services
             await _databaseContext.SaveChangesAsync();
         }
 
+        public async Task<List<Rating>> GetRatingsByBungalowId(int bungalowId)
+        {
+            return await _databaseContext.Ratings
+                .Where(r => r.BungalowId == bungalowId)
+                .ToListAsync();
+        }
+
+
+
     }
 }

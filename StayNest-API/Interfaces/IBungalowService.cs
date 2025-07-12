@@ -10,6 +10,10 @@ namespace StayNest_API.Interfaces
         Task ReserveBungalow(Reservation reservation);
 
         Task AddRating(Rating rating);
+        Task<List<Rating>> GetRatingsByBungalowId(int bungalowId);
+
+
+
 
     }
 }

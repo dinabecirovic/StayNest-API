@@ -5,5 +5,6 @@
         public int UserId { get; set; }
         public int BungalowId { get; set; }
         public int Score { get; set; } 
+        public string Comment { get; set; }
     }
 }

@@ -34,6 +34,9 @@ namespace StayNest_API.Controllers
                 {
                     AdvertisementId = request.AdvertisementId,
                     UserId = request.UserId,
+                    FirstName = request.FirstName,
+                    LastName = request.LastName,
+                    PhoneNumber = request.PhoneNumber,
                     StartDate = request.StartDate,
                     EndDate = request.EndDate,
                 };
@@ -56,11 +59,21 @@ namespace StayNest_API.Controllers
                 UserId = request.UserId,
                 BungalowId = request.BungalowId,
                 Score = request.Score,
+                Comment = request.Comment,
             };
 
             await _bungalowService.AddRating(rating);
             return Ok(new { Message = "Hvala na povratnoj informaciji." });
         }
+
+        [HttpGet("ratings/{bungalowId}")]
+        public async Task<IActionResult> GetRatings(int bungalowId)
+        {
+            var ratings = await _bungalowService.GetRatingsByBungalowId(bungalowId);
+            return Ok(ratings);
+        }
+
+
 
     }
 }

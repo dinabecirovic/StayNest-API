@@ -72,12 +72,12 @@ namespace StayNest_API.Services
             }
 
             var bungalowOwnerId = int.Parse(user.FindFirst("id")?.Value ?? "0");
-            Console.WriteLine($"SalonOwnerId iz tokena: {bungalowOwnerId}");
+            Console.WriteLine($"BungalowOwnerId iz tokena: {bungalowOwnerId}");
 
             // Kreiramo oglas
             var advertisement = new Advertisement
             {
-                UrlPhotos = uploadedUrls,  // Čuvamo listu URL-ova
+                UrlPhotos = uploadedUrls,  
                 NumbersOfRooms = request.NumbersOfRooms,
                 BuildingArea = request.BuildingArea,
                 Location = request.Location,
@@ -93,7 +93,7 @@ namespace StayNest_API.Services
             return new AdvertisementResponseDTO
             {
                 Id = advertisement.Id,
-                UrlPhotos = uploadedUrls,  // Vraćamo listu URL-ova
+                UrlPhotos = uploadedUrls,  
                 NumbersOfRooms = request.NumbersOfRooms,
                 BuildingArea = request.BuildingArea,
                 Location = request.Location,
@@ -148,13 +148,14 @@ namespace StayNest_API.Services
             await _databaseContext.SaveChangesAsync();
         }
 
-        public async Task<List<Reservation>> GetReservationsForOwner(int BungalowOwnerId)
+        public async Task<List<Reservation>> GetReservationsForAdvertisement(int advertisementId)
         {
             return await _databaseContext.Reservations
                 .Include(r => r.Advertisement)
-                .Where(r => r.Advertisement.BungalowOwnerId == BungalowOwnerId)
+                .Where(r => r.Advertisement.Id == advertisementId)
                 .ToListAsync();
         }
+
 
         public async Task DeleteAdvertisementByAdmin(int advertisementId)
         {
