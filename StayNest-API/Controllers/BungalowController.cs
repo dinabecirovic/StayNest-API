@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.SignalR;
 using StayNest_API.DTOs;
 using StayNest_API.Interfaces;
 using StayNest_API.Data.Models;
+using StayNest_API.Data;
+using System.Security.Claims;
 
 namespace StayNest_API.Controllers
 {
@@ -12,9 +14,11 @@ namespace StayNest_API.Controllers
     public class BungalowController : ControllerBase
     {
         private readonly IBungalowService _bungalowService;
-        public BungalowController(IBungalowService bungalowService)
+        private readonly DatabaseContext _databaseContext;
+        public BungalowController(IBungalowService bungalowService, DatabaseContext databaseContext)
         { 
             _bungalowService = bungalowService;
+            _databaseContext = databaseContext;
         }
 
         [HttpGet("search")]
@@ -26,29 +30,44 @@ namespace StayNest_API.Controllers
 
         [HttpPost("reserve")]
         [Authorize(Roles = "User")]
-        public async Task<IActionResult> ReserveBungalow([FromBody] ReservationRequestDTO request) 
+        public async Task<IActionResult> ReserveBungalow([FromBody] ReservationRequestDTO request)
         {
             try
             {
+                // 1. Izvuci ID korisnika iz tokena
+                var userIdClaim = User.FindFirst("id") ?? User.FindFirst(ClaimTypes.NameIdentifier);
+                if (userIdClaim == null)
+                    return Unauthorized(new { Message = "Nevažeći token." });
+
+                int userId = int.Parse(userIdClaim.Value);
+
+                // 2. Nađi korisnika u bazi
+                var user = await _databaseContext.Users.FindAsync(userId);
+                if (user == null)
+                    return NotFound(new { Message = "Korisnik nije pronađen." });
+
+                // 3. Kreiraj rezervaciju sa podacima iz baze
                 var reservation = new Reservation
                 {
                     AdvertisementId = request.AdvertisementId,
-                    UserId = request.UserId,
-                    FirstName = request.FirstName,
-                    LastName = request.LastName,
-                    PhoneNumber = request.PhoneNumber,
+                    UserId = userId,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    Email = user.Email,
                     StartDate = request.StartDate,
                     EndDate = request.EndDate,
                 };
 
                 await _bungalowService.ReserveBungalow(reservation);
+
                 return Ok(new { Message = "Uspešno ste rezervisali bungalov." });
             }
             catch (Exception ex)
-            { 
+            {
                 return BadRequest(new { Message = ex.Message });
             }
         }
+
 
         [HttpPost("rate")]
         [Authorize(Roles = "User")]
@@ -58,6 +77,7 @@ namespace StayNest_API.Controllers
             {
                 UserId = request.UserId,
                 BungalowId = request.BungalowId,
+                Username = request.Username,
                 Score = request.Score,
                 Comment = request.Comment,
             };
@@ -70,8 +90,20 @@ namespace StayNest_API.Controllers
         public async Task<IActionResult> GetRatings(int bungalowId)
         {
             var ratings = await _bungalowService.GetRatingsByBungalowId(bungalowId);
-            return Ok(ratings);
+
+            var response = ratings.Select(r => new RatingResponseDto
+            {
+                Id = r.Id,
+                UserId = r.UserId,
+                BungalowId = r.BungalowId,
+                Score = r.Score,
+                Comment = r.Comment,
+                Username = r.Username
+            }).ToList();
+
+            return Ok(response);
         }
+
 
 
 
