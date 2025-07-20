@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "StayNest-API\\Controllers\\BungalowController.cs",
               "ToolTip": "C:\\Users\\Dina\\Desktop\\StayNest-API\\StayNest-API\\Controllers\\BungalowController.cs",
               "RelativeToolTip": "StayNest-API\\Controllers\\BungalowController.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAA3wA0AAAA0AAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAAAYwA0AAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-18T14:46:04.563Z",
               "EditorCaption": ""
@@ -55,8 +55,7 @@
               "RelativeToolTip": "StayNest-API\\DTOs\\ReservationRequestDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-18T14:44:16.6Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-18T14:44:16.6Z"
             }
           ]
         }
