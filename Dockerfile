@@ -1,25 +1,19 @@
-﻿# 1. Build stage
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-WORKDIR /app
+# Build stage
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
 
-# Kopiraj csproj i restore
-COPY *.sln .
-COPY StayNest-API/*.csproj ./StayNest-API/
-RUN dotnet restore
-
-# Kopiraj ostatak i build
+# Kopiraj sve fajlove
 COPY . .
-WORKDIR /app/StayNest-API
-RUN dotnet publish -c Release -o /out
 
-# 2. Runtime stage
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
+# Restore nuget paketa
+RUN dotnet restore "StayNest-API/StayNest-API.csproj"
+
+# Build i publish
+RUN dotnet publish "StayNest-API/StayNest-API.csproj" -c Release -o /app/publish
+
+# Final stage (runtime)
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
-COPY --from=build /out .
+COPY --from=build /app/publish .
 
-# Expose port 5000 and 5001 (HTTP/HTTPS)
-EXPOSE 5000
-EXPOSE 5001
-
-# Pokreni aplikaciju
 ENTRYPOINT ["dotnet", "StayNest-API.dll"]
