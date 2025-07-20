@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Dina\\Desktop\\StayNest-API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|c:\\users\\dina\\desktop\\staynest-api\\staynest-api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|solutionrelative:staynest-api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|c:\\users\\dina\\desktop\\staynest-api\\staynest-api\\controllers\\bungalowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F7AA5CF-598E-4D35-88E6-24254AFD53CF}|StayNest-API\\StayNest-API.csproj|solutionrelative:staynest-api\\controllers\\bungalowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -35,6 +39,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\Dina\\Desktop\\StayNest-API\\StayNest-API\\Dockerfile",
+              "RelativeDocumentMoniker": "StayNest-API\\Dockerfile",
+              "ToolTip": "C:\\Users\\Dina\\Desktop\\StayNest-API\\StayNest-API\\Dockerfile",
+              "RelativeToolTip": "StayNest-API\\Dockerfile",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-07-20T09:11:22.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "BungalowController.cs",
               "DocumentMoniker": "C:\\Users\\Dina\\Desktop\\StayNest-API\\StayNest-API\\Controllers\\BungalowController.cs",
               "RelativeDocumentMoniker": "StayNest-API\\Controllers\\BungalowController.cs",
@@ -47,7 +64,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ReservationRequestDTO.cs",
               "DocumentMoniker": "C:\\Users\\Dina\\Desktop\\StayNest-API\\StayNest-API\\DTOs\\ReservationRequestDTO.cs",
               "RelativeDocumentMoniker": "StayNest-API\\DTOs\\ReservationRequestDTO.cs",
