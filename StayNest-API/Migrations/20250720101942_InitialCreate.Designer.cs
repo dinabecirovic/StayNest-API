@@ -12,7 +12,7 @@ using StayNest_API.Data;
 namespace StayNest_API.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20250718121819_InitialCreate")]
+    [Migration("20250720101942_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
